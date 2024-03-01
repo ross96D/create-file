@@ -1,0 +1,8 @@
+version: 3
+tasks:
+  build:
+    - gcc -w -s -o out/createf main.c
+    - cp ./out/createf $HOME/.local/bin/
+  run:
+    - task: build
+    - ./main
