@@ -62,17 +62,19 @@ int main(int argc, char const *argv[])
 {
     if (argc != 2)
     {
-        printf("this take exactly one argument\n");
+        fprintf(stderr, "this take exactly one argument\n");
         return 1;
     }
 
     if (!check_is_file(argv[1]))
     {
-        printf("argument is not a file\n");
+        fprintf(stderr, "argument is not a file\n");
         return 1;
     }
 
     create(argv[1], '/');
+
+    fprintf(stdout, "%s", argv[1]);
 
     return 0;
 }
